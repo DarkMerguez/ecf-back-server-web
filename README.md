@@ -35,7 +35,7 @@ INSERT INTO product (name,price,description,categoryId) VALUES ( "DoubleBigMassi
 
 5. Ecrire la requête SQL qui permet de récupérer tout les produits d'une commande en fonction de l'id d'un utilisateur.
 ```sql
-# Ecrivez la requête ici ...
+SELECT user.id as userId, `order`.id as orderId, product.id as productId, product.name, product.price, product.description, ProductOrder.quantity FROM user INNER JOIN cart ON user.id = cart.userId INNER JOIN `order` ON cart.id = `order`.cartId INNER JOIN ProductOrder ON `order`.id = ProductOrder.orderId INNER JOIN product ON ProductOrder.productId = product.id WHERE user.id = 1 AND `order`.id = 1;
 
 ```
 
