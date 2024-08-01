@@ -3,7 +3,10 @@ const sequelize = require("../database");
 const User = require("./User");
 
 const Cart = sequelize.define("Cart", {
-    isPaid: DataTypes.BOOLEAN
+    isPaid: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: 0
+    }
 })
 
 
